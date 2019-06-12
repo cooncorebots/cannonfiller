@@ -1,0 +1,451 @@
+{
+  "Variables": [
+    {
+      "name": "Cannonball",
+      "value": "Cannonball",
+      "type": "SPRITE_ITEM"
+    },
+    {
+      "name": "Dwarf multicannon",
+      "value": "Dwarf multicannon",
+      "type": "GO"
+    },
+    {
+      "name": "Broken Multicannon",
+      "value": "Broken multicannon",
+      "type": "GO"
+    },
+    {
+      "name": "Repair",
+      "value": "Repair",
+      "type": "ACTION"
+    },
+    {
+      "name": "1",
+      "value": "1",
+      "type": "NUMBER"
+    },
+    {
+      "name": "Magic longbow",
+      "value": "Magic longbow",
+      "type": "SPRITE_ITEM"
+    },
+    {
+      "name": "",
+      "value": "",
+      "type": "SPRITE_ITEM"
+    },
+    {
+      "name": "Nature rune",
+      "value": "Nature rune",
+      "type": "SPRITE_ITEM"
+    },
+    {
+      "name": "Pick-up",
+      "value": "Pick-up",
+      "type": "ACTION"
+    }
+  ],
+  "NodeCollection": [
+    {
+      "name": "StartCondition",
+      "base": {
+        "id": "5f8a6242-2a56-4991-a390-ca9e4b6a7666",
+        "position": {
+          "x": "0.0",
+          "y": "0.0"
+        },
+        "flowTasks": {
+          "success": "4b4a2d7b-27ed-45dc-b0af-2448de83b4a7"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "GameMode": "OSRS",
+        "IntervalLow": 100.0,
+        "IntervalHigh": 1000.0
+      }
+    },
+    {
+      "name": "SpecialInteractionAction",
+      "base": {
+        "id": "c3705ec2-852c-4589-bb1f-6d220e1f89d4",
+        "position": {
+          "x": "580.0",
+          "y": "293.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": false,
+          "bool1": false,
+          "bool2": false,
+          "bool3": false,
+          "TypeList": [],
+          "within": "1",
+          "results": "",
+          "type": "GOQuery"
+        }
+      },
+      "variables": {
+        "Values": [
+          "Dwarf multicannon"
+        ],
+        "ValueRegex": false,
+        "Comparators": [],
+        "CompRegex": false,
+        "Condition": "Click",
+        "Type": "Game Object",
+        "ClickRegex": false,
+        "spellName": ""
+      }
+    },
+    {
+      "name": "TimerCondition",
+      "base": {
+        "id": "2bd4b038-6eae-4614-9677-f4af915a45f5",
+        "position": {
+          "x": "1356.0",
+          "y": "-241.0"
+        },
+        "flowTasks": {
+          "success": "c3705ec2-852c-4589-bb1f-6d220e1f89d4",
+          "failure": "cbab35e1-6dd3-4856-828a-b28c3d8db8d8"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "Comparator": "20",
+        "Condition": "Every X seconds",
+        "IntervalLow": 25.727490984396166,
+        "IntervalHigh": 56.16143218277497
+      }
+    },
+    {
+      "name": "GameObjectCondition",
+      "base": {
+        "id": "c2aeb2b7-913e-44cd-b564-58af6c9df673",
+        "position": {
+          "x": "536.0",
+          "y": "-19.0"
+        },
+        "flowTasks": {
+          "success": "fae4661f-adbf-4e76-9222-1c33f99d2fae",
+          "failure": "dd80b999-9d65-4b1d-992b-cf6b38a0dad6"
+        },
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": false,
+          "bool1": false,
+          "bool2": false,
+          "bool3": false,
+          "TypeList": [],
+          "within": "1",
+          "results": "",
+          "type": "GOQuery"
+        }
+      },
+      "variables": {
+        "ItemValues": [
+          "Broken Multicannon"
+        ],
+        "ItemRegex": false,
+        "ActionValues": [],
+        "ActionRegex": false
+      }
+    },
+    {
+      "name": "InteractionAction",
+      "base": {
+        "id": "fae4661f-adbf-4e76-9222-1c33f99d2fae",
+        "position": {
+          "x": "556.0",
+          "y": "-410.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": false,
+          "bool1": false,
+          "bool2": false,
+          "bool3": false,
+          "list3": [
+            "Repair"
+          ],
+          "TypeList": [],
+          "within": "1",
+          "results": "",
+          "type": "GOQuery"
+        }
+      },
+      "variables": {
+        "Condition": "GameObject",
+        "ItemValues": [
+          "Broken Multicannon"
+        ],
+        "ItemRegex": false,
+        "ActionValues": [
+          "Repair"
+        ],
+        "ActionRegex": false
+      }
+    },
+    {
+      "name": "SpecialInteractionAction",
+      "base": {
+        "id": "a083acf6-9471-4680-b121-a9bb79d09f1e",
+        "position": {
+          "x": "2285.0",
+          "y": "473.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": false,
+          "bool1": false,
+          "bool2": false,
+          "type": "InventoryQuery"
+        }
+      },
+      "variables": {
+        "Values": [
+          "Magic longbow"
+        ],
+        "ValueRegex": false,
+        "Comparators": [
+          "Standard"
+        ],
+        "CompRegex": false,
+        "Condition": "Cast magic on",
+        "Type": "Inventory item",
+        "ClickRegex": false,
+        "spellName": "High level alchemy"
+      }
+    },
+    {
+      "name": "InventoryCondition",
+      "base": {
+        "id": "cbab35e1-6dd3-4856-828a-b28c3d8db8d8",
+        "position": {
+          "x": "2228.0",
+          "y": "-364.0"
+        },
+        "flowTasks": {
+          "success": "e621f876-3388-4676-bc94-23197282e696",
+          "failure": "2bd4b038-6eae-4614-9677-f4af915a45f5"
+        },
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": false,
+          "bool1": false,
+          "bool2": false,
+          "type": "InventoryQuery"
+        }
+      },
+      "variables": {
+        "ItemValues": [
+          "Nature rune"
+        ],
+        "ItemRegex": false,
+        "Condition": "Contains any of:"
+      }
+    },
+    {
+      "name": "InventoryCondition",
+      "base": {
+        "id": "e621f876-3388-4676-bc94-23197282e696",
+        "position": {
+          "x": "2230.0",
+          "y": "-134.0"
+        },
+        "flowTasks": {
+          "success": "0f504de4-cf37-4cda-a051-edce0818b2aa",
+          "failure": "2bd4b038-6eae-4614-9677-f4af915a45f5"
+        },
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": false,
+          "bool1": false,
+          "bool2": false,
+          "type": "InventoryQuery"
+        }
+      },
+      "variables": {
+        "ItemValues": [
+          "Magic longbow"
+        ],
+        "ItemRegex": false,
+        "Condition": "Contains any of:"
+      }
+    },
+    {
+      "name": "TimerCondition",
+      "base": {
+        "id": "4b4a2d7b-27ed-45dc-b0af-2448de83b4a7",
+        "position": {
+          "x": "-503.0",
+          "y": "373.0"
+        },
+        "flowTasks": {
+          "success": "2fce9ff7-51bc-40d8-8cfb-20984472f541",
+          "failure": "c2aeb2b7-913e-44cd-b564-58af6c9df673"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "Comparator": "1000",
+        "Condition": "Every X seconds",
+        "IntervalLow": 1.555558828734717,
+        "IntervalHigh": 3.9405137317605843
+      }
+    },
+    {
+      "name": "InteractionAction",
+      "base": {
+        "id": "8641e7bd-f126-4e66-abd1-af3bc08253de",
+        "position": {
+          "x": "1381.0",
+          "y": "783.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": false,
+          "bool1": false,
+          "bool2": false,
+          "bool3": false,
+          "list3": [
+            "Pick-up"
+          ],
+          "TypeList": [],
+          "within": "",
+          "results": "",
+          "type": "GOQuery"
+        }
+      },
+      "variables": {
+        "Condition": "GameObject",
+        "ItemValues": [
+          "Dwarf multicannon"
+        ],
+        "ItemRegex": false,
+        "ActionValues": [
+          "Pick-up"
+        ],
+        "ActionRegex": false
+      }
+    },
+    {
+      "name": "TimerCondition",
+      "base": {
+        "id": "5b9cad51-b5b2-4c0f-bd6e-3bdb80868e96",
+        "position": {
+          "x": "1359.0",
+          "y": "400.0"
+        },
+        "flowTasks": {
+          "success": "8641e7bd-f126-4e66-abd1-af3bc08253de",
+          "failure": "eea815a8-26d3-41ef-b140-4257258a1e61"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "Comparator": "20",
+        "Condition": "Every X seconds",
+        "IntervalLow": 5.142102385771093,
+        "IntervalHigh": 7.225227310291311
+      }
+    },
+    {
+      "name": "InventoryCondition",
+      "base": {
+        "id": "dd80b999-9d65-4b1d-992b-cf6b38a0dad6",
+        "position": {
+          "x": "1349.0",
+          "y": "34.0"
+        },
+        "flowTasks": {
+          "success": "5b9cad51-b5b2-4c0f-bd6e-3bdb80868e96",
+          "failure": "2bd4b038-6eae-4614-9677-f4af915a45f5"
+        },
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": false,
+          "bool1": false,
+          "bool2": false,
+          "type": "InventoryQuery"
+        }
+      },
+      "variables": {
+        "ItemValues": [
+          "Cannonball"
+        ],
+        "ItemRegex": false,
+        "Condition": "Contains none of:"
+      }
+    },
+    {
+      "name": "PauseAction",
+      "base": {
+        "id": "2fce9ff7-51bc-40d8-8cfb-20984472f541",
+        "position": {
+          "x": "-465.0",
+          "y": "677.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "Multiplier": "500",
+        "PauseMode": "Random duration",
+        "IntervalLow": 5.533333333333334,
+        "IntervalHigh": 20.41404982407888
+      }
+    },
+    {
+      "name": "PauseAction",
+      "base": {
+        "id": "eea815a8-26d3-41ef-b140-4257258a1e61",
+        "position": {
+          "x": "1866.0",
+          "y": "786.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "Multiplier": "1",
+        "PauseMode": "Indefinite",
+        "IntervalLow": 100.0,
+        "IntervalHigh": 2000.0
+      }
+    },
+    {
+      "name": "TimerCondition",
+      "base": {
+        "id": "0f504de4-cf37-4cda-a051-edce0818b2aa",
+        "position": {
+          "x": "2244.0",
+          "y": "132.0"
+        },
+        "flowTasks": {
+          "success": "a083acf6-9471-4680-b121-a9bb79d09f1e"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "Comparator": "1",
+        "Condition": "Every X seconds",
+        "IntervalLow": 419.9881122958276,
+        "IntervalHigh": 1593.1293169657386
+      }
+    }
+  ],
+  "BotCategory": "OTHER",
+  "inventoryData": {},
+  "internalData": {
+    "Mouse multiplier": 1.0,
+    "Mouse path": "MLP_PATH_GENERATOR",
+    "Disable advanced": false
+  }
+}
